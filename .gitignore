@@ -83,3 +83,10 @@ discord_bot_info.txt
 
 # bot build output
 dist-bot/
+
+# Local archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
