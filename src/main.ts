@@ -123,6 +123,7 @@ import {
   validatePasswordChange,
 } from './ui/account_portal';
 import { technicalErrorMessage, userFacingApiError } from './ui/api_error_i18n';
+import { installDevWatermark } from './ui/dev_watermark';
 import {
   handleKeyboardActivation,
   syncInputAriaState,
@@ -763,6 +764,7 @@ function mountGameUi(): void {
   if (!template || !startScreen) throw new Error('Game UI shell is missing.');
   document.body.insertBefore(template.content.cloneNode(true), startScreen);
   translatePage();
+  installDevWatermark();
   syncCommunityMenuMode();
 }
 
