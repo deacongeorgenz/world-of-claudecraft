@@ -923,6 +923,13 @@ export function buildProps(seed: number, delveLabel?: (delveId: string) => strin
     const y = ground(x, z);
     const g = new THREE.Group();
     addParts(g, 'bonfire', { y: -0.05, rot: propRand(x, z, 1) * Math.PI * 2, scale: 4.3 });
+    addParts(g, 'lanternWall', {
+  x: 1.2,
+  y: 1.2,
+  z: 0,
+  rot: 0,
+  scale: 1.25,
+});
     const flame = new THREE.Mesh(
       flameGeo,
       new THREE.MeshLambertMaterial({
