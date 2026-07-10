@@ -955,6 +955,21 @@ export function buildProps(seed: number, delveLabel?: (delveId: string) => strin
     registerHideable(g, circleFootprint(x, z, 0.85, y + 1.45, 2.4));
   }
 
+    // ---- custom props
+  for (const p of getActiveWorldContent().props.customProps ?? []) {
+    const y = ground(p.x, p.z);
+    const g = new THREE.Group();
+
+    addParts(g, p.kind as PropKey, {
+      y: p.y ?? 0,
+      rot: p.rot ?? 0,
+      scale: p.scale ?? 1,
+    });
+
+    g.position.set(p.x, y, p.z);
+    group.add(shadowed(g));
+  }
+
   // ---- bandit/war tents: Kenney ridge tents, opening on +z, hideable -------
   for (const t of getActiveWorldContent().props.tents) {
     const kind: PropKey = propRand(t.x, t.z, 2) < 0.55 ? 'tentOpen' : 'tentSmall';

@@ -247,6 +247,7 @@ function mergeProps(sets: ZonePropsDef[]): ZonePropsDef {
     ruinRings: sets.flatMap((s) => s.ruinRings),
     fences: sets.flatMap((s) => s.fences),
     graveyards: sets.flatMap((s) => s.graveyards),
+    customProps: sets.flatMap((s) => s.customProps ?? []),
     // optional per-zone field, was being dropped here, so the delve entrance
     // marker (name slab + arch) never reached the renderer (props.ts)
     delveMarkers: sets.flatMap((s) => s.delveMarkers ?? []),

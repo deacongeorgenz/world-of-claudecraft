@@ -1201,4 +1201,14 @@ export const ZONE1_PROPS: ZonePropsDef = {
     { x: 4, z: -56 },
   ],
   delveMarkers: [{ x: -5, z: -52, delveId: 'collapsed_reliquary' }],
+
+  customProps: [
+    {
+      kind: 'coreboundLantern',
+      x: 4,
+      z: 4,
+      rot: 0,
+      scale: 1,
+    },
+  ],
 };
